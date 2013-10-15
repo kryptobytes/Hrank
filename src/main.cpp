@@ -30,7 +30,7 @@ unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
 uint256 hashGenesisBlock("0x");
-static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // starting difficulty is 1 / 2^12
+static CBigNum bnProofOfWorkLimit(~uint256(0) >> 30); // starting difficulty
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 CBigNum bnBestChainWork = 0;
@@ -828,16 +828,16 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 1 * COIN;
+    int64 nSubsidy = 5 * COIN;
 
     // Subsidy is cut in half every # blocks
-   // nSubsidy >>= (nHeight / 210000);
+   // nSubsidy >>= (nHeight / 10);
 
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 86400; // Hrank: 1 days
-static const int64 nTargetSpacing = 120; // Hrank: 2 minute blocks
+static const int64 nTargetTimespan = 36000; // Hrank: 1 days
+static const int64 nTargetSpacing = 120; // Hrank: 120 second blocks
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
@@ -2007,7 +2007,7 @@ bool LoadBlockIndex(bool fAllowNew)
     
         
         // Genesis block
-        const char* pszTimestamp = "Traditionally one puts something timely here coinciding with the epoch";
+        const char* pszTimestamp = "Postman - Coin generated through Kryptobyes 09:05:03-10/15/13";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2025,7 +2025,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         if (fTestNet)
         {
-            block.nTime    = 0; //testnet epochtime
+            block.nTime    = 1381828280; //testnet epochtime
             block.nNonce   = 0; //testnet
         }
 
@@ -2033,7 +2033,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x"));
+        assert(block.hashMerkleRoot == uint256("0x83de4dd30efd3e8dd8dea0230d4c4e85ae1cefa11b391bddf3f9afc6a71e9e7e"));
 
         // If genesis block hash does not match, then generate new genesis hash.
         if (true && block.GetHash() != hashGenesisBlock)
