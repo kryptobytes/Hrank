@@ -12,7 +12,7 @@
 const std::string CLIENT_NAME("Satoshi");
 
 // Client version number
-#define CLIENT_VERSION_SUFFIX   "-QQQ"
+#define CLIENT_VERSION_SUFFIX   "-TRR"
 
 
 // The following part of the code determines the CLIENT_BUILD variable.

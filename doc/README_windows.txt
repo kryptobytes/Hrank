@@ -1,4 +1,4 @@
-Xcoin 0.6 BETA
+Hrank 0.6 BETA
 
 Copyright (c) 2009-2012 Bitcoin Developers
 Copyright (c) 2011-2012 Litecoin Developers
@@ -11,7 +11,7 @@ cryptographic software written by Eric Young (eay@cryptsoft.com).
 
 Intro
 -----
-Xcoin is a free open source peer-to-peer electronic cash system that is
+Hrank is a free open source peer-to-peer electronic cash system that is
 completely decentralized, without the need for a central server or trusted
 parties.  Users hold the crypto keys to their own money and transact directly
 with each other, with the help of a P2P network to check for double-spending.
@@ -19,17 +19,17 @@ with each other, with the help of a P2P network to check for double-spending.
 
 Setup
 -----
-Unpack the files into a directory and run Xcoin-qt.exe.
+Unpack the files into a directory and run Hrank-qt.exe.
 
-If you have Microsoft Security Essentials, you need to add Xcoin-qt.exe to its
+If you have Microsoft Security Essentials, you need to add Hrank-qt.exe to its
 "Excluded processes" list.  Microsoft Security Essentials->Settings tab,
-select Excluded processes, press Add, select xcoin-qt.exe, OK, Save changes.
+select Excluded processes, press Add, select Hrank-qt.exe, OK, Save changes.
 
 The software automatically finds other nodes to connect to.  You can
 enable Universal Plug and Play using a menu entry or set your firewall
 to forward port 9333 (TCP) to your computer so you can receive
-incoming connections.  Xcoin works without incoming connections,
-but allowing incoming connections helps the Xcoin network.
+incoming connections.  Hrank works without incoming connections,
+but allowing incoming connections helps the Hrank network.
 
 See the bitcoin wiki at:
   https://en.bitcoin.it/wiki/Main_Page
